@@ -5,7 +5,7 @@
   <h2 style="text-align: center;"> Bootcamp Enrollment form</h2>
   <!--1st directive for data binding in TDF (ngform)-->
   <form #userForm="ngForm" class="form-horizontal">
-
+    {{userForm.form.valid}}
     <!--Binding data with ngForm-->
     {{userForm.value | json}}
     <hr/>
@@ -87,7 +87,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button [disabled]="userForm.form.invalid || topicHasError" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </form>
