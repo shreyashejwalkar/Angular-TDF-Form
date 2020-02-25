@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Template driven forms';
   topics =["Angular", "React", "Vue"];
+  
+  userModel = new User('Shreya', 'abc@gmail.com', 4455887799, '', 'morning', true);
 }
