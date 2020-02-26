@@ -3,6 +3,9 @@
 </div>
 <div class="container">
   <h2 style="text-align: center;"> Bootcamp Enrollment form</h2>
+  <div class="alert alert-danger" *ngIf="errorMsg">
+      {{errorMsg}}
+  </div>
   <!--1st directive for data binding in TDF (ngform)-->
   <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate class="form-horizontal">
     {{userForm.form.valid}}

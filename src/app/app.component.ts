@@ -8,6 +8,7 @@ import { EnrollmentService } from './enrollment.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  errorMsg='';
   submitted = false;
   title = 'Template driven forms';
   topics =["Angular", "React", "Vue"];
@@ -25,6 +26,6 @@ export class AppComponent {
   onSubmit()
   {
     this.submitted=true;
-      this._enrollmentService.enroll(this.userModel).subscribe(data => console.log('Success!', data),error => console.error('Error!', error));
+      this._enrollmentService.enroll(this.userModel).subscribe(data => console.log('Success!', data),error => this.errorMsg = error.statusText);
   }
 }
